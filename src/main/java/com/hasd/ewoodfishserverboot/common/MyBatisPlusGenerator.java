@@ -9,7 +9,7 @@ import java.util.Collections;
 public class MyBatisPlusGenerator {
 
     //表名
-    public static final String TABLE_NAME = "user";
+    public static final String TABLE_NAME = "platform";
     //作者
     public static final String AUTHOR = "hasd";
     //Mapper路径
@@ -30,6 +30,7 @@ public class MyBatisPlusGenerator {
                             .fileOverride() // 覆盖已生成文件
                             .enableSwagger() // 开启 swagger 模式
                             .outputDir(PARENT_PATH)
+                            .disableOpenDir() //不打开目录
                             .commentDate("yyyy-MM-dd");
                 })
                 .packageConfig(builder -> {

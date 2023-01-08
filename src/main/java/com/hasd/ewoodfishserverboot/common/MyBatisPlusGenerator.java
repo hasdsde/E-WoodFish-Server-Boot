@@ -9,7 +9,7 @@ import java.util.Collections;
 public class MyBatisPlusGenerator {
 
     //表名
-    public static final String TABLE_NAME = "platform";
+    public static final String TABLE_NAME = "user";
     //作者
     public static final String AUTHOR = "hasd";
     //Mapper路径

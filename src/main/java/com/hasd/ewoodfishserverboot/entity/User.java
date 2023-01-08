@@ -38,5 +38,8 @@ public class User implements Serializable {
 
     private LocalDateTime createTime;
 
+    @ApiModelProperty("注册时ip")
+    private String regIp;
+
 
 }

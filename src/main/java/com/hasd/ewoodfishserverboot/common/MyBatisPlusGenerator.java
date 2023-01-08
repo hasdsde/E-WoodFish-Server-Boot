@@ -40,7 +40,9 @@ public class MyBatisPlusGenerator {
                 .strategyConfig(builder -> {
                     builder.addInclude(TABLE_NAME)//设置表名
                             .entityBuilder()    //entity前置，才能用lombok
-                            .enableLombok();  //使用lombok
+                            .enableLombok() //lombok注解
+                            .mapperBuilder()//mapper注解
+                            .enableMapperAnnotation();  //使用lombok
                 })
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();

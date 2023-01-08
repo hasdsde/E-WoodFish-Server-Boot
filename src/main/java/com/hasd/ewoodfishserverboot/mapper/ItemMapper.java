@@ -1,7 +1,8 @@
 package com.hasd.ewoodfishserverboot.mapper;
 
-import com.hasd.ewoodfishserverboot.entity.Item;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hasd.ewoodfishserverboot.entity.Item;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author hasd
  * @since 2023-01-08
  */
+@Mapper
 public interface ItemMapper extends BaseMapper<Item> {
 
 }

@@ -1,0 +1,44 @@
+package com.hasd.ewoodfishserverboot.controller;
+
+import com.hasd.ewoodfishserverboot.common.Result;
+import com.hasd.ewoodfishserverboot.entity.Logs;
+import com.hasd.ewoodfishserverboot.mapper.LogsMapper;
+import com.hasd.ewoodfishserverboot.mapper.UserMapper;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
+
+/**
+ * <p>
+ * 前端控制器
+ * </p>
+ *
+ * @author hasd
+ * @since 2023-01-11
+ */
+@RestController
+@RequestMapping("/logs")
+public class LogsController {
+    @Resource
+    LogsMapper logsMapper;
+    @Resource
+    UserMapper userMapper;
+
+    //添加数据
+    @GetMapping("/swear")
+    public Result getLogs(@RequestParam("username") String userName, @RequestParam("score") Integer score, HttpServletRequest request) {
+        Logs logs = new Logs();
+        logs.setScore(score);
+        logs.setUsername(userName);
+        logs.setCreateTime(LocalDateTime.now());
+        logs.setIp(request.getRemoteAddr());
+        logsMapper.insert(logs);
+        userMapper.addScore(userName, score);
+        return Result.success("请求成功");
+    }
+}

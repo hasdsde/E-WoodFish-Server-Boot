@@ -3,6 +3,7 @@ package com.hasd.ewoodfishserverboot.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hasd.ewoodfishserverboot.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ import java.util.List;
 public interface UserMapper extends BaseMapper<User> {
 
     List<User> selectTop();
+
+    Integer addScore(@Param("userName") String userName, @Param("score") Integer score);
 }

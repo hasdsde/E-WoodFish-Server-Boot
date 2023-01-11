@@ -9,7 +9,7 @@ import java.util.Collections;
 public class MyBatisPlusGenerator {
 
     //表名
-    public static final String TABLE_NAME = "user";
+    public static final String TABLE_NAME = "logs";
     //作者
     public static final String AUTHOR = "hasd";
     //Mapper路径
@@ -42,7 +42,9 @@ public class MyBatisPlusGenerator {
                             .entityBuilder()    //entity前置，才能用lombok
                             .enableLombok() //lombok注解
                             .mapperBuilder()//mapper注解
-                            .enableMapperAnnotation();  //使用lombok
+                            .enableMapperAnnotation()//使用lombok
+                            .controllerBuilder() //RestController前置
+                            .enableRestStyle();//使用RestController
                 })
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();

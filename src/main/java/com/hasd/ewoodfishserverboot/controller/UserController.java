@@ -33,7 +33,7 @@ public class UserController {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("username", user.getUsername());
         if (userMapper.selectCount(wrapper) != 0) {
-            throw new NormalException("用户名已存在");
+            throw new NormalException(500, "用户名已存在");
         }
         user.setRegIp(request.getRemoteAddr()); //获取ip
         user.setCreateTime(LocalDateTime.now());//日期

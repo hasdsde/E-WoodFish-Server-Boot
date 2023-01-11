@@ -14,6 +14,6 @@ public class NormalExceptionAdvice {
     @ResponseBody
     @ExceptionHandler(NormalException.class)
     public Result handleNormalException(NormalException n) {
-        return Result.error(n.getCode(), "异常" + n.getMessage());
+        return Result.error(n.getCode(), "异常:" + n.getMessage());
     }
 }

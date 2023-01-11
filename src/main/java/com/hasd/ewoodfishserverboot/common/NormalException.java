@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class NormalException extends RuntimeException {
     private Integer code;
+    private String Message;
 
     public NormalException() {
         super();
@@ -24,5 +25,6 @@ public class NormalException extends RuntimeException {
     public NormalException(Integer code, String msg) {
         super();
         this.code = code;
+        this.Message = msg;
     }
 }

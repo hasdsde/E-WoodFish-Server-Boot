@@ -23,4 +23,8 @@ public interface UserMapper extends BaseMapper<User> {
     Integer addScore(@Param("userName") String userName, @Param("score") Integer score);
 
     int selectScore(@Param("userName") String userName);
+
+    Integer getId(@Param("userName") String userName);
+
+    void costScore(@Param("id") Integer id, @Param("costNum") Integer costNum);
 }

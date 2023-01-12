@@ -20,6 +20,7 @@ public class NormalException extends RuntimeException {
 
     public NormalException(String msg) {
         super(msg);
+        this.Message = msg;
     }
 
     public NormalException(Integer code, String msg) {

@@ -6,16 +6,26 @@
         set score = score + #{score}
         where username = #{userName};
     </insert>
+    <update id="costScore">
+        update user
+        set score = score - #{costNum}
+        where id = #{id}
+    </update>
 
     <select id="selectTop" resultType="com.hasd.ewoodfishserverboot.entity.User">
-        select username, score
+        select username, score, create_time
         from user
-        order by score
-        limit 100;
+        order by score desc
+        limit 20;
     </select>
     <select id="selectScore" resultType="java.lang.Integer">
         select score
         from user
         where username = #{userName};
+    </select>
+    <select id="getId" resultType="java.lang.Integer">
+        select id
+        from user
+        where username = #{userName}
     </select>
 </mapper>

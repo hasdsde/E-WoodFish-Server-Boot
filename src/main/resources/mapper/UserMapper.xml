@@ -13,4 +13,9 @@
         order by score
         limit 100;
     </select>
+    <select id="selectScore" resultType="java.lang.Integer">
+        select score
+        from user
+        where username = #{userName};
+    </select>
 </mapper>

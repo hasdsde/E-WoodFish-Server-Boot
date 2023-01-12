@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 
 /**
  * <p>
@@ -39,6 +40,10 @@ public class LogsController {
         logs.setIp(request.getRemoteAddr());
         logsMapper.insert(logs);
         userMapper.addScore(userName, score);
-        return Result.success("请求成功");
+        int s = userMapper.selectScore(userName);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("score", s);
+        map.put("username", userName);
+        return Result.success("请求成功", map);
     }
 }

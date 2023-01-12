@@ -21,4 +21,6 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> selectTop();
 
     Integer addScore(@Param("userName") String userName, @Param("score") Integer score);
+
+    int selectScore(@Param("userName") String userName);
 }

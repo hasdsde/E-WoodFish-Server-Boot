@@ -48,7 +48,7 @@ public class UserController {
         userWrapper.eq("username", user.getUsername());
         User Quser = userMapper.selectOne(userWrapper);
         if (Quser == null) {
-            throw new NormalException("账号不存在");
+            throw new NormalException(500, "账号不存在");
         }
         if (Objects.equals(Quser.getPassword(), user.getPassword())) {
             Quser.setRegIp("");

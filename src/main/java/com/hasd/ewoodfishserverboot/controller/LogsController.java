@@ -1,5 +1,6 @@
 package com.hasd.ewoodfishserverboot.controller;
 
+import com.hasd.ewoodfishserverboot.common.NormalException;
 import com.hasd.ewoodfishserverboot.common.Result;
 import com.hasd.ewoodfishserverboot.entity.Logs;
 import com.hasd.ewoodfishserverboot.mapper.LogsMapper;
@@ -33,6 +34,9 @@ public class LogsController {
     //添加数据
     @GetMapping("/swear")
     public Result getLogs(@RequestParam("username") String userName, @RequestParam("score") Integer score, HttpServletRequest request) {
+        if (score != 1) {
+            throw new NormalException(666, "非法参数");
+        }
         Logs logs = new Logs();
         logs.setScore(score);
         logs.setUsername(userName);

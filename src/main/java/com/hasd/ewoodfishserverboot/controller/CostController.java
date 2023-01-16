@@ -43,7 +43,7 @@ public class CostController {
             throw new NormalException("用户不存在");
         }
         if (user.getScore() < costNum) {
-            throw new NormalException("分数不足");
+            throw new NormalException(500, "分数不足");
         } else {
             userMapper.costScore(user.getId(), costNum);
         }

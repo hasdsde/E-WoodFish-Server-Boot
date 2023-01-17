@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  * @since 2023-01-08
  */
 @RestController
-@RequestMapping("/cost")
+@RequestMapping("/api/cost")
 public class CostController {
     @Resource
     CostMapper costMapper;

@@ -24,7 +24,7 @@ import java.util.HashMap;
  * @since 2023-01-11
  */
 @RestController
-@RequestMapping("/logs")
+@RequestMapping("/api/logs")
 public class LogsController {
     @Resource
     LogsMapper logsMapper;

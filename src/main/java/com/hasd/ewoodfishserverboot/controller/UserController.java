@@ -42,7 +42,7 @@ public class UserController {
     }
 
     //登录
-    @PostMapping("/log")
+    @PostMapping("/login")
     public Result Login(@RequestBody User user) {
         QueryWrapper<User> userWrapper = new QueryWrapper<>();
         userWrapper.eq("username", user.getUsername());
